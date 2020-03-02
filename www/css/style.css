@@ -1,0 +1,14 @@
+/* Empty. Add your own CSS if you like */
+#map {
+width:100%;
+height:100%;
+}
+#show_map_holder{
+width:100%;
+}
+  
+.blue_content h1,
+.blue_content h2
+{
+    color:#2699fb;
+}

@@ -1,0 +1,30 @@
+<ion-view view-title="Report">
+  <ion-content class="padding">
+    <div class="button-bar">
+      
+          <a ng-click="doHideMap()"  ng-class="{'button-positive': !showMap,'button':1}">Report</a>
+          <a ng-click="doShowMap()" ng-class="{'button-positive': showMap,'button':1}">View Case Map</a>
+    </div>
+
+    <div ng-show="!showMap && doneReporting">
+        <h2>Thanks for the report, this will help prevent others from gettting sick too.</h2>
+        <h3>Sorry your sick, that never fun - but remember you have a community to support you. Visit the CDC link below to read the steps to take when you suspect you are sick with COVID-19.</h3>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-click="openCDCSteps()">
+      <h2>Read Steps to Take on the CDC Website </h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </div>
+    <div ng-show="!showMap && !doneReporting">
+    <h2>Please report if you are not feeling well</h2>
+    <p>By reporting you can help identify outbreaks and save lives. Your report will be displayed on the FightCoronaVirusApp case map as a square, rounded to the nearest square kilometer, so your precise location will be unkown.</p>
+        <button ng-click="reportSick(1)" class="button button-dark button-full"> I've Got Something </button>
+        <button ng-click="reportSick(2)" class="button button-assertive button-full"> I've Got a Fever </button>
+        <button ng-click="reportSick(3)" class="button button-royal button-full"> I Tested Positive for COVID-19 </button>
+    </div>
+
+    <div ng-show="showMap" id="show_map_holder">
+        <div id="map"></div>
+    </div>
+
+  </ion-content>
+</ion-view>
